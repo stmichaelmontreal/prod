@@ -1,4 +1,3 @@
-on new machine run
+Firs of all run:
 
-sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install git
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install git
