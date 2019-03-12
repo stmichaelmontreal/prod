@@ -1,0 +1,23 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name _;
+
+    location / {
+            root /var/www/web;
+            index index.html
+            try_files $uri $uri/ =404;
+    }
+
+    location /api/ {
+            proxy_pass http://localhost:5050;
+            proxy_http_version 1.1;
+    }
+
+    location /img/ {
+            root /var/www/api/fdb;
+            #expires 30d;
+            autoindex on;
+    }
+}
