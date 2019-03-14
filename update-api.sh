@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd /var/www/api
-git pull origin master
+sudo git pull origin master
 npm install --production
 cd fdb
 sudo bash folders.sh
