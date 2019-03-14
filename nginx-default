@@ -4,20 +4,21 @@ server {
 
     server_name _;
 
+    root /var/www/web;
+    index index.html
+
     location / {
-            root /var/www/web;
-            index index.html
-            try_files $uri $uri/ =404;
+        try_files $uri $uri/ /index.html;
     }
 
     location /api/ {
-            proxy_pass http://localhost:5050;
-            proxy_http_version 1.1;
+        proxy_pass http://localhost:5050;
+        proxy_http_version 1.1;
     }
 
     location /img/ {
-            root /var/www/api/fdb;
-            #expires 30d;
-            autoindex on;
+        root /var/www/api/fdb;
+        #expires 30d;
+        autoindex on;
     }
 }
