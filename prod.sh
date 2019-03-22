@@ -14,7 +14,8 @@ sudo passwd wwwapi
 sudo git clone https://github.com/stmichaelmontreal/api.git /var/www/api
 sudo npm install --prefix /var/www/api --production
 sudo find /var/www/api/fdb/ -exec chown wwwapi: {} \;
-sudo chmod -R u+rw,g+rw,o+rw /var/www/api/log/
+sudo find /var/www/api/fdb/ -exec chown wwwapi: {} \;
+# sudo chmod -R u+rw,g+rw,o+rw /var/www/api/log/
 
 # pm2
 sudo su -c "pm2 start /var/www/api/server.js" -s /bin/sh wwwapi
