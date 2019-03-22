@@ -2,6 +2,7 @@
 
 cd /var/www/api
 sudo git pull origin master
+sudo rm -rf /var/www/api/node_modules
 npm install --production
 cd fdb
 sudo bash folders.sh
