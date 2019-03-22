@@ -5,4 +5,4 @@ sudo git pull origin master
 npm install --production
 cd fdb
 sudo bash folders.sh
-pm2 restart 0
+sudo su -c "pm2 restart 0" -s /bin/sh wwwapi
