@@ -21,8 +21,8 @@ sudo git clone https://github.com/stmichaelmontreal/api.git /var/www/api
 sudo npm install --prefix /var/www/api --production
 sudo find /var/www/api/fdb/ -exec chown wwwapi: {} \;
 sudo find /var/www/api/log/ -exec chown wwwapi: {} \;
-sudo chmod -R u=rw,g=r,o=r /var/www/api/fdb/
-sudo chmod -R u=rw,g=r,o=r /var/www/api/log/
+sudo chmod -R u=rwx,g=rx,o=rx /var/www/api/fdb/
+sudo chmod -R u=rwx,g=rx,o=rx /var/www/api/log/
 
 # pm2
 sudo su -c "pm2 start /var/www/api/server.js" -s /bin/sh wwwapi
