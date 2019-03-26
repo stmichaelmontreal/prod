@@ -6,6 +6,12 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y unzip
 sudo apt-get install -y nginx
+sudo apt-get install -y mysql-server
+sudo mysql_secure_installation
+sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PutHerePassword'"
+sudo mysql -e "FLUSH PRIVILEGES"
+
+
 sudo npm install -g pm2
 
 # api
