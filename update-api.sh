@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 cd /var/www/api
-sudo git pull origin master
+sudo git fetch --all
+sudo git reset --hard origin/master
 sudo rm -rf /var/www/api/node_modules
 sudo npm install --production
 cd fdb
