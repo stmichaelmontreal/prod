@@ -9,8 +9,6 @@ sudo apt-get install -y nginx
 sudo apt-get install -y mysql-server
 
 sudo mysql_secure_installation
-sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PutHerePassword'"
-sudo mysql -e "FLUSH PRIVILEGES"
 
 sudo npm install -g pm2
 
