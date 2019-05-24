@@ -32,6 +32,6 @@ sudo systemctl stop nginx
 sudo cp nginx-default /etc/nginx/sites-enabled/default
 
 # web client
-git clone https://github.com/stmichaelmontreal/deploy.git
+sudo git clone https://github.com/stmichaelmontreal/deploy.git
 cd deploy
-bash git-to-web.sh
+sudo bash git-to-web.sh
