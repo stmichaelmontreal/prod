@@ -20,14 +20,7 @@ sudo npm install --prefix /var/www/api --production
 sudo find /var/www/api/ -exec chown wwwapi: {} \;
 sudo chmod -R u=rwx,g=rx,o=rx /var/www/api/
 
-# pm2
-cd /var/www/api/
-sudo su -c "pm2 start server.js" -s /bin/sh wwwapi
-# pm2 startup
-sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u wwwapi --hp /home/wwwapi
-sudo su -c "pm2 save" -s /bin/sh wwwapi
-
-# nginx
+# nginx copy nginx-default config from current dir
 sudo systemctl stop nginx
 sudo cp nginx-default /etc/nginx/sites-enabled/default
 
@@ -35,3 +28,11 @@ sudo cp nginx-default /etc/nginx/sites-enabled/default
 sudo git clone https://github.com/stmichaelmontreal/deploy.git
 cd deploy
 sudo bash git-to-web.sh
+
+# pm2
+cd /var/www/api/
+sudo su -c "pm2 start server.js" -s /bin/sh wwwapi
+# pm2 startup
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u wwwapi --hp /home/wwwapi
+sudo su -c "pm2 save" -s /bin/sh wwwapi
+
